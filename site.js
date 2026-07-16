@@ -99,6 +99,47 @@
   const year = document.getElementById('current-year');
   if (year) year.textContent = new Date().getFullYear();
 
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const submitStatus = contactForm.querySelector('.form-submit-status');
+    const nextField = contactForm.querySelector('input[name="_next"]');
+    const defaultLabel = submitButton?.dataset.submitLabel || submitButton?.textContent.trim() || 'Enviar mensagem';
+
+    const resetSubmitState = () => {
+      contactForm.removeAttribute('aria-busy');
+      delete contactForm.dataset.submitting;
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = defaultLabel;
+      }
+      if (submitStatus) submitStatus.textContent = '';
+    };
+
+    contactForm.addEventListener('submit', (event) => {
+      if (contactForm.dataset.submitting === 'true') {
+        event.preventDefault();
+        return;
+      }
+
+      if (nextField && /^https?:$/.test(window.location.protocol)) {
+        nextField.value = new URL('obrigado.html', window.location.href).href;
+      }
+
+      contactForm.dataset.submitting = 'true';
+      contactForm.setAttribute('aria-busy', 'true');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Enviando…';
+      }
+      if (submitStatus) {
+        submitStatus.textContent = 'Enviando sua mensagem. Aguarde a confirmação.';
+      }
+    });
+
+    window.addEventListener('pageshow', resetSubmitState);
+  }
+
   const revealElements = document.querySelectorAll(
     'section, .service-card, .lattes-link, .faq-item, .for-who-list li, .how-list li, .booking-image, .about-image, .approach-image'
   );

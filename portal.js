@@ -2,14 +2,29 @@
 (() => {
   'use strict';
 
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const intro = document.querySelector('.portal-intro');
   if (intro) {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const closeIntro = () => {
       intro.classList.add('is-exiting');
       window.setTimeout(() => intro.remove(), reducedMotion ? 0 : 380);
     };
-    window.setTimeout(closeIntro, reducedMotion ? 0 : 1050);
+    window.setTimeout(closeIntro, reducedMotion ? 0 : 1800);
+  }
+
+  const revealTargets = document.querySelectorAll('[data-portal-reveal]');
+  if (!reducedMotion && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('portal-motion-ready');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -36px 0px' });
+    revealTargets.forEach((target) => revealObserver.observe(target));
+  } else {
+    revealTargets.forEach((target) => target.classList.add('is-visible'));
   }
 
   const normalize = (value) => value

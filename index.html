@@ -108,9 +108,9 @@
       document.documentElement.classList.add('js');
       document.documentElement.classList.add('splash-enabled');
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260716-clinica" />
+    <link rel="stylesheet" href="styles.css?v=20260716-atualizacao" />
     <script src="splash.js?v=20260715-2s" defer></script>
-    <script src="site.js?v=20260715-editorial" defer></script>
+    <script src="site.js?v=20260716-formulario" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -519,7 +519,12 @@
         >
           <input type="hidden" name="_subject" value="Novo contato pelo site David F. Santos" />
           <input type="hidden" name="_template" value="table" />
-          <!-- Adicione _next somente após confirmar o domínio definitivo. -->
+          <input
+            type="hidden"
+            name="_next"
+            id="form-next"
+            value="https://psicologodavidfsantos.com.br/obrigado.html"
+          />
           <input
             type="text"
             name="_honey"
@@ -626,7 +631,15 @@
               não devo enviar informações sensíveis. <span aria-hidden="true">*</span>
             </label>
           </div>
-          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+          <p
+            class="form-submit-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          ></p>
+          <button type="submit" class="btn btn-primary" data-submit-label="Enviar mensagem">
+            Enviar mensagem
+          </button>
         </form>
       </div>
     </section>
