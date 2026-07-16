@@ -1,0 +1,6 @@
+/*
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; frame-src 'none'; form-action https://formsubmit.co; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; style-src-attr 'none'; script-src 'self' 'sha256-Ig77IhtBcD+Dqded+xMdoC5sJmZ/7QhHrItyiEJW3zo=' 'sha256-fobuEoecsKtcy7wqOYD37d8fNQqR/hLYiyk2ZzCzEEA=' 'sha256-cr+Y+/8Koi0KACW4wGWbZAxGf5DayGPCOnIsOIJLr7k=' 'sha256-bSSXjGd5To46YM+vcGT3MTUaRAVY7lHBTnKf0WrLhtk='; script-src-attr 'none'; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; worker-src 'none'; manifest-src 'self'; upgrade-insecure-requests
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()

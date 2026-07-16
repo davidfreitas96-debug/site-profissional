@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="privacy-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#040507"/>
+      <stop offset="0.54" stop-color="#091b29"/>
+      <stop offset="1" stop-color="#07090c"/>
+    </linearGradient>
+    <radialGradient id="privacy-light" cx="72%" cy="42%" r="56%">
+      <stop offset="0" stop-color="#123e46" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#0d2835" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#040507" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="privacy-wine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#641b2a" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#44131d" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="privacy-threshold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f1ede5" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#f1ede5" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#bca16c" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#privacy-bg)"/>
+  <rect width="1600" height="900" fill="url(#privacy-light)"/>
+  <path d="M0 0h490L305 900H0Z" fill="url(#privacy-wine)"/>
+  <path d="M1110 0h490v900h-315L980 612Z" fill="#11151a" fill-opacity="0.62"/>
+  <path d="M842 0h442v900H842Z" fill="#040507" fill-opacity="0.2"/>
+  <path d="M896 118h292v664H896Z" fill="none" stroke="#bca16c" stroke-opacity="0.42" stroke-width="2"/>
+  <path d="M936 160h212v580H936Z" fill="#07090c" fill-opacity="0.42" stroke="#f1ede5" stroke-opacity="0.1"/>
+  <path d="M1015 160v580M1069 160v580" stroke="url(#privacy-threshold)" stroke-width="2"/>
+  <g fill="none" stroke="#bca16c" stroke-opacity="0.34" stroke-width="2">
+    <path d="M76 98h324M76 98v214"/>
+    <path d="M76 802h510"/>
+    <path d="M1524 96h-202M1524 96v286"/>
+    <path d="M1524 804h-258M1524 804V584"/>
+    <path d="M438 0 232 900"/>
+    <path d="m1256 900 344-362"/>
+  </g>
+  <g fill="#bca16c" fill-opacity="0.72">
+    <circle cx="76" cy="312" r="5"/>
+    <circle cx="586" cy="802" r="4"/>
+    <circle cx="1322" cy="96" r="4"/>
+    <circle cx="1266" cy="804" r="5"/>
+  </g>
+  <g fill="#f1ede5" fill-opacity="0.22">
+    <circle cx="748" cy="168" r="2"/>
+    <circle cx="780" cy="218" r="2"/>
+    <circle cx="728" cy="254" r="2"/>
+    <circle cx="1372" cy="472" r="2"/>
+    <circle cx="1414" cy="512" r="2"/>
+  </g>
+</svg>
