@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# As páginas do espaço público usam meta noindex e precisam permanecer
-# rastreáveis para que os buscadores leiam essa diretiva.
-# Adicione a URL absoluta do sitemap somente após definir o domínio.
+Sitemap: https://psicologodavidfsantos.com.br/sitemap.xml

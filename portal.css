@@ -1663,3 +1663,12 @@ html {
     break-inside: avoid;
   }
 }
+
+@media (min-width: 768px) {
+  .portal-prose > p,
+  .portal-faq-answer > p {
+    hyphens: auto;
+    text-align: justify;
+    text-align-last: left;
+  }
+}
