@@ -1664,11 +1664,17 @@ html {
   }
 }
 
-@media (min-width: 768px) {
-  .portal-prose > p,
-  .portal-faq-answer > p {
-    hyphens: auto;
-    text-align: justify;
-    text-align-last: left;
-  }
+:is(
+  .portal-prose,
+  .portal-card,
+  .portal-reading,
+  .portal-faq-answer,
+  .portal-workspace
+) p:not(.portal-kicker):not(.portal-meta):not(.portal-tool-meta):not(.portal-source-note):not(.portal-results-status):not(.portal-example):not(.portal-reflection-question) {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
 }

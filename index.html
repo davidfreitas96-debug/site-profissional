@@ -158,9 +158,9 @@
       document.documentElement.classList.add('js');
       document.documentElement.classList.add('splash-enabled');
     </script>
-    <link rel="stylesheet" href="styles.css?v=20260716-atualizacao" />
+    <link rel="stylesheet" href="styles.css?v=20260719-alinhamento" />
     <script src="splash.js?v=20260715-2s" defer></script>
-    <script src="site.js?v=20260716-formulario" defer></script>
+    <script src="site.js?v=20260719-paciente" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
@@ -215,6 +215,10 @@
           </ul>
         </nav>
         <a href="#agendamento" class="btn btn-primary nav-cta">Agendar atendimento</a>
+        <a class="mobile-portal-link" href="area-do-cliente/" aria-label="Acessar o Espaço do Paciente">
+          <span>Espaço do</span>
+          <span>Paciente</span>
+        </a>
         <button type="button" class="nav-toggle" aria-label="Abrir menu" aria-controls="navigation" aria-expanded="false" id="navToggle">
           <span></span>
           <span></span>
@@ -776,6 +780,12 @@
       </div>
     </section>
     </main>
+
+    <nav class="patient-footer-access" aria-label="Acesso ao Espaço do Paciente">
+      <div class="container patient-footer-access-inner">
+        <a href="area-do-cliente/">Acesse o Espaço do Paciente</a>
+      </div>
+    </nav>
 
     <!-- Footer -->
     <footer id="contato" class="site-footer">

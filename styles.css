@@ -592,6 +592,10 @@ picture {
   white-space: nowrap;
 }
 
+.mobile-portal-link {
+  display: none;
+}
+
 /* Mobile nav toggle */
 .nav-toggle {
   align-items: center;
@@ -677,6 +681,33 @@ picture {
   }
   html.js .site-header .nav-cta {
     display: none;
+  }
+
+  .mobile-portal-link {
+    align-items: center;
+    color: var(--color-champagne);
+    display: inline-flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    font-size: 0.68rem;
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+    min-height: 44px;
+    padding: 0.3rem 0.45rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .mobile-portal-link span {
+    white-space: nowrap;
+  }
+
+  .mobile-portal-link:hover,
+  .mobile-portal-link:focus-visible {
+    color: var(--color-warm-white);
   }
 
   html:not(.js) .nav-wrapper {
@@ -2428,6 +2459,40 @@ picture {
   padding: 2.5rem 0 1rem;
   border-top: 1px solid rgba(184, 148, 93, 0.2);
   font-size: 0.9rem;
+}
+
+.patient-footer-access {
+  background: rgba(4, 5, 7, 0.96);
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+  z-index: 1;
+}
+
+.patient-footer-access-inner {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 68px;
+  padding-block: 0.65rem;
+}
+
+.patient-footer-access a {
+  border-bottom: 1px solid rgba(188, 161, 108, 0.46);
+  color: var(--color-champagne);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  min-height: 44px;
+  padding: 0.72rem 0.15rem 0.45rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.patient-footer-access a:hover,
+.patient-footer-access a:focus-visible {
+  border-color: var(--color-champagne);
+  color: var(--color-warm-white);
 }
 .footer-content {
   display: flex;
@@ -4445,6 +4510,12 @@ html.splash-enabled .site-splash::after {
     font-size: 1.22rem;
   }
 
+  .mobile-portal-link {
+    font-size: 0.6rem;
+    letter-spacing: 0.025em;
+    padding-inline: 0.2rem;
+  }
+
   .hero-text h1 {
     font-size: clamp(2.7rem, 12.7vw, 3.1rem);
   }
@@ -4579,12 +4650,17 @@ html.splash-enabled .site-splash::after {
   }
 }
 
-@media (min-width: 768px) {
-  .about-text > p,
-  .approach-text > p,
-  .privacy-content section > p {
-    hyphens: auto;
-    text-align: justify;
-    text-align-last: left;
-  }
+:is(
+  .site-main p:not([class]),
+  .site-main .for-who-intro,
+  .privacy-content .privacy-intro,
+  .privacy-content section > p,
+  .thanks-content > p:not([class])
+) {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-align: justify;
+  text-align-last: left;
+  text-justify: inter-word;
 }

@@ -2,6 +2,7 @@
   const navToggle = document.getElementById('navToggle');
   const navigation = document.getElementById('navigation');
   const logoLink = document.querySelector('.logo-area');
+  const mobilePortalLink = document.querySelector('.mobile-portal-link');
   // Mantido em sincronia com o breakpoint do menu em styles.css.
   const mobileNavigation = window.matchMedia('(max-width: 1279px)');
 
@@ -15,6 +16,16 @@
     navToggle.setAttribute('aria-expanded', String(shouldOpen));
     navToggle.setAttribute('aria-label', shouldOpen ? 'Fechar menu' : 'Abrir menu');
     document.body.classList.toggle('menu-open', shouldOpen);
+
+    if (mobilePortalLink) {
+      if (shouldOpen) {
+        mobilePortalLink.setAttribute('inert', '');
+        mobilePortalLink.setAttribute('aria-hidden', 'true');
+      } else {
+        mobilePortalLink.removeAttribute('inert');
+        mobilePortalLink.removeAttribute('aria-hidden');
+      }
+    }
 
     if (mobile && !shouldOpen) {
       navigation.setAttribute('inert', '');
