@@ -862,6 +862,55 @@ html {
   margin-top: 0.8rem;
 }
 
+.portal-material-card {
+  align-items: center;
+  background: var(--portal-white);
+  border: 1px solid var(--portal-line);
+  border-radius: var(--portal-radius);
+  box-shadow: var(--portal-shadow);
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  padding: clamp(1.2rem, 4vw, 2.5rem);
+}
+
+.portal-material-cover {
+  justify-self: center;
+  margin: 0;
+  max-width: 300px;
+  width: 100%;
+}
+
+.portal-material-cover img {
+  border: 1px solid var(--portal-line);
+  border-radius: 4px;
+  box-shadow: 0 14px 30px rgba(36, 42, 42, 0.16);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.portal-material-content {
+  min-width: 0;
+}
+
+.portal-material-content > * + * {
+  margin-top: 0.85rem;
+}
+
+.portal-material-content h2 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.portal-material-content > p:not(.portal-meta) {
+  color: var(--portal-muted);
+  max-width: 62ch;
+}
+
+.portal-material-content > .portal-actions {
+  margin-top: 1.35rem;
+}
+
 .portal-glossary-list {
   display: grid;
   gap: 0.8rem;
@@ -1254,6 +1303,14 @@ html {
   .portal-comparison,
   .portal-contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .portal-material-card {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-material-cover {
+    max-width: min(100%, 300px);
   }
 
   .portal-hero-aside {
